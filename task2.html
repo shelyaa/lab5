@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        .highlighted {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="cell">1</td>
+            <td class="cell">7</td>
+            <td class="cell">8</td>
+            <td class="cell">9</td>
+            <td class="cell">10</td>
+            <td class="cell">11</td>
+        </tr>
+        <tr>
+            <td class="cell">12</td>
+            <td class="cell">13</td>
+            <td class="cell">14</td>
+            <td class="cell">15</td>
+            <td class="cell">16</td>
+            <td class="cell">17</td>
+        </tr>
+        <tr>
+            <td class="cell">18</td>
+            <td class="cell">19</td>
+            <td class="cell">20</td>
+            <td class="cell">21</td>
+            <td class="cell">22</td>
+            <td class="cell">23</td>
+        </tr>
+        <tr>
+            <td class="cell">24</td>
+            <td class="cell">25</td>
+            <td class="cell">26</td>
+            <td class="cell">27</td>
+            <td class="cell">28</td>
+            <td class="cell">29</td>
+        </tr>
+        <tr>
+            <td class="cell">30</td>
+            <td class="cell">31</td>
+            <td class="cell">32</td>
+            <td class="cell">33</td>
+            <td class="cell">34</td>
+            <td class="cell">35</td>
+        </tr>
+    </table>
+
+    <script>
+        const cells = document.querySelectorAll('.cell');
+        const rows = document.querySelectorAll('tr');
+
+        cells[0].addEventListener('mouseover', function () {
+            this.classList.add('highlighted');
+        });
+
+        cells[0].addEventListener('click', function () {
+            this.style.backgroundColor = 'blue';
+        });
+
+        cells[0].addEventListener('dblclick', function () {
+            for (let i = 0; i < cells.length; i++) {
+                if (i % 6 === 0) {
+                    rows[i / 12].style.backgroundColor = 'yellow';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+

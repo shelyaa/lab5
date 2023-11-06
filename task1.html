@@ -1,0 +1,81 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>form</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+
+<body>
+<div class="container">
+  <form id="form">
+    <div class="input-group">
+      <label>First name</label>
+      <input type="text" placeholder="First name" id="contact-name" onkeyup="validateName()">
+      <span id="name-error"></span>
+    </div>
+
+    <div class="input-group">
+      <label>Second name</label>
+      <input type="text" placeholder="Second name" id="contact-sname" onkeyup="validateSName()">
+      <span id="sname-error"></span>
+    </div>
+
+    <div class="input-group">
+      <label>Last name</label>
+      <input type="text" placeholder="Last name" id="contact-lname" onkeyup="validateLName()">
+      <span id="lname-error"></span>
+    </div>
+
+    <div class="input-group">
+      <label>Group :</label>
+      <select class="form-control" id="contact-group" required>
+        <option value="IA-11">IA-11</option>
+        <option value="IA-12">IA-12</option>
+        <option value="IA-13">IA-13</option>
+        <option value="IA-14">IA-14</option>
+      </select>
+    </div>
+
+    <div class="input-group">
+      <label>Date of birth:</label>
+      <input class="form-control item" type="date" id="bdate" value="1990-01-01" min="1990-01-01" max="2022-10-6" onkeyup="validateBDate()" required>
+      <span id="bdate-error"></span>
+    </div>
+
+    <div class="input-group">
+      <label>Gender:</label>
+      <input type="radio" name="gender" id="male" value="Male" checked>Male
+      <input type="radio" name="gender" id="female" value="Female">Female
+    </div>
+
+    <div class="input-group">
+      <label>Phone number</label>
+      <input type="tel" id="contact-phone" class="tel" name="phone" placeholder="+(380)__-__-__-__" onkeyup="validatePhone()" >
+      <span id="phone-error"></span>
+    </div>
+
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" placeholder="Email" id="contact-email" onkeyup="validateEmail()">
+      <span id="email-error"></span>
+    </div>
+
+    <div class="input-group">
+      <label>Password:</label>
+      <input type="password" id="password" name="password" placeholder="Password" onkeyup="validatePassword()">
+      <span id="password-error"></span>
+    </div>
+
+    <button type="button" onclick="validateForm()" id="submit">Sign up</button>
+    <span id="submit-error"></span>
+  </form>
+</div>
+<script src="./script.js"></script>
+</body>
+
+</html>
